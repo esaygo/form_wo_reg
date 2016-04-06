@@ -21,10 +21,10 @@
               <fieldset>
                <div class="input-fields">
                  <label class="required">
-                  <input type="text" name="email" value="email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'email';}"></label><br>
-                  <input id="first_name" type="text" name = "first_name"  value="first_name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"><br>
-                  <input id="last_name" type="text" name="last_name" value="last_name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"><br>
-                  <input id="password" type="text" name = "password" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><br>
+                  <input type="text" name="email" placeholder="email" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'email';}"  ></label><br>
+                  <input id="first_name" type="text" name = "first_name"  placeholder="first_name" onfocus="this.placeholder = ''"; onblur="if (this.placeholder == '') {this.placeholder = 'first_name';}"><br>
+                  <input id="last_name" type="text" name="last_name" placeholder="last_name" onfocus="this.placeholder = ''";><br>
+                  <input id="password" type="text" name = "password" placeholder="password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Password';}"><br>
                   <label class="required">
                   <input type="text" name="confirm_password" class="required"  value="confirm_password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}"></label><br>
                   <label class="required">
@@ -62,6 +62,3 @@
    </div><!--end of layer-->
 </body>
 </html>
-<script>
-  alert($('#first_name').val());
-</script>
