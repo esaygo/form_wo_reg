@@ -7,9 +7,12 @@
   <title>Form w/o DB</title>
   <link href='http://fonts.googleapis.com/css?family=Nunito:400,300'>
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/start/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/style_form.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 </head>
 <body>
    <div class="layer">
@@ -28,16 +31,17 @@
                   <label class="required">
                   <input type="text" name="confirm_password" class="required"  placeholder="confirm_password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Confirm Password';}"></label><br>
                   <label class="required">
-                  <input type="text" name="birth_date" class="required" value="birth_date" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Birth Date';}"></label><br>
+                  <input type="text" name="birth_date" class="required" placeholder="birth_date" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Birth Date';}"></label><br>
                <div class="submit">
                   <input type="submit" value="Submit">
+                  <button><a href="logout.php">Destroy session</a></button>
                </div>
          </div>
        </fieldset>
          </form>
 
          <?php
-         echo $_SESSION['test'];
+         var_dump($_SESSION['test']);
 
             if($_SESSION['first_name'] =='numeric') {?>
               <script>
@@ -56,10 +60,10 @@
              </script>
 
           <?php } ?>
+
       </div><!--end of main-->
    </div><!--end of flex container-->
    <div class="clear"> </div>
-
    </div><!--end of layer-->
 </body>
 </html>
