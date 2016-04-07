@@ -23,12 +23,12 @@
                  <label class="required">
                   <input type="text" name="email" placeholder="email" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'email';}"  ></label><br>
                   <input id="first_name" type="text" name = "first_name"  placeholder="first_name" onfocus="this.placeholder = ''"; onblur="if (this.placeholder == '') {this.placeholder = 'first_name';}"><br>
-                  <input id="last_name" type="text" name="last_name" placeholder="last_name" onfocus="this.placeholder = ''";><br>
+                  <input id="last_name" type="text" name="last_name" placeholder="last_name" onfocus="this.placeholder = ''"; onblur="if (this.placeholder == '') {this.placeholder = 'last_name';}"><br>
                   <input id="password" type="text" name = "password" placeholder="password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Password';}"><br>
                   <label class="required">
-                  <input type="text" name="confirm_password" class="required"  value="confirm_password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}"></label><br>
+                  <input type="text" name="confirm_password" class="required"  placeholder="confirm_password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Confirm Password';}"></label><br>
                   <label class="required">
-                  <input type="text" name="birth_date" class="required" value="birth_date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Birth Date';}"></label><br>
+                  <input type="text" name="birth_date" class="required" value="birth_date" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Birth Date';}"></label><br>
                <div class="submit">
                   <input type="submit" value="Submit">
                </div>
@@ -37,6 +37,7 @@
          </form>
 
          <?php
+         echo $_SESSION['test'];
 
             if($_SESSION['first_name'] =='numeric') {?>
               <script>

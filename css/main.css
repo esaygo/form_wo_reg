@@ -2,44 +2,6 @@ form {
   margin-left: 200px;
 }
 
-.high {
-  width: 200px;
-  height: 200px;
-  background: rgba(177, 38, 54,0.7);
-  color: #fff;
-  margin-left: 180px;
-  margin-bottom: 30px;
-}
-
-.low {
-  width: 200px;
-  height: 200px;
-  background: blue;
-  color: #fff;
-  margin-left: 180px;
-  margin-bottom: 30px;
-}
-
-.correct {
-  width: 200px;
-  height: 200px;
-  background: rgba(46, 138, 61, 0.7);
-  color: #fff;
-  margin-left: 180px;
-  margin-bottom: 30px;
-}
-
-p, h1 {
-  text-align: center;;
-
-}
-
-#wrapper {
-  border: 2px solid #5887d6;
-  /*background: rgba(44, 205, 221, 0.4);*/
-  width: 600px;
-  height: 600px;
-}
 
 .submit_btn {
   	-moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
