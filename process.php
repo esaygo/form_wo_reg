@@ -1,39 +1,40 @@
 <?php
 session_start();
+$errors = array();
 
-$email = $_POST['email'];
-$first_name = $_POST['first_name'];
-$last_name = $_POST['last_name'];
-$password = $_POST['password'];
-$_SESSION['test'] =$_POST['password'];
-$confirm_password = $_POST['confirm_password'];
-$birth_date = $_POST['birth_date'];
+if(isset($_POST['action']) && $_POST['action'] == 'register') {
 
-// variables declared outside of a function don't scope through functions, unlike many other languages, so you have to pass them trhough as arguments.
+  $_SESSION['email'] = $_POST['email'];
+  $_SESSION['first_name'] = $_POST['first_name'];
+  $_SESSION['last_name1'] = $_POST['last_name1'];
+  $_SESSION['password1'] = $_POST['password1'];
+  $_SESSION['confirm_password'] = $_POST['confirm_password'];
+  $_SESSION['birth_date'] = $_POST['birth_date'];
 
-function validateName($first_name) {
-  if(!ctype_alpha($first_name)) {
-    $_SESSION['first_name'] = 'numeric';
-    // unset($_SESSION['first_name']);
-    // return false;
+  if(isset($_POST['email']) && $_POST['email'] != null ) {
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+      $errors[] = "This is not a valid email";
+    }
+  } else if($_POST['email'] == "") {
+    $errors[] = "Email should not be empty";
   }
-  // return true;
+
+  if(!empty($errors)) {
+    $_SESSION['errors'] = $errors;
+    header('Location: index.php');
+    exit();
+  } else {
+    echo "you are logged in";
+    header('Location: success.php');
+    exit();
+  }
+
 }
 
 
-function validatePassword($password) {
-  if(strlen($password) < 6 && $password != "password") {
-    $_SESSION['password'] = 'error';
-    // unset($_SESSION['password']);
-  }
-}
 
 
 
-validateName($first_name);
-validatePassword($password);
 
-header('Location: index.php');
-exit();
 
 ?>
